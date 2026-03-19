@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry Chaku ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffe6e6, #ffffff);
+      color: #333;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #ff4d6d;
+      color: white;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #e6003c;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #msg {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="section">
+    <h1>Hey Chaku… 🥺</h1>
+    <p>I know I hurt you… I’m really sorry.</p>
+  </div>
+
+  <div class="section">
+    <p>
+      I was overwhelmed, hungry, had a bad dream…<br>
+      and I was missing my mom a lot.<br>
+      But still… I shouldn’t have hurt you 💔
+    </p>
+  </div>
+
+  <div class="section">
+    <p>
+      You are my safe place… not someone I want to fight with.
+    </p>
+  </div>
+
+  <div class="section">
+    <h1>Our Moments ❤️</h1>
+    <p>Ahmedabad… Nalsarovar… every moment with you matters to me.</p>
+  </div>
+
+  <div class="section">
+    <h1>Can we fix this? 🥺</h1>
+    <button onclick="showMsg()">Tap if you still love me ❤️</button>
+    <p id="msg" class="hidden"></p>
+  </div>
+
+  <script>
+    function showMsg() {
+      const msg = document.getElementById("msg");
+      msg.classList.remove("hidden");
+      msg.innerHTML =
+        "I don’t want perfect… I just want us again ❤️🥺";
+    }
+  </script>
+
+</body>
+</html>

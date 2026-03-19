@@ -1,259 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>I'm Sorry Chaku ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      text-align: center;
-      background: linear-gradient(135deg, #ffe6e6 0%, #fff5f5 50%, #ffffff 100%);
-      color: #333;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 700px;
-      margin: auto;
-      animation: fadeInUp 0.8s ease-out forwards;
-      opacity: 0;
-    }
-
-    .section:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-
-    .section:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-
-    .section:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-
-    .section:nth-child(4) {
-      animation-delay: 0.8s;
-    }
-
-    .section:nth-child(5) {
-      animation-delay: 1s;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h1 {
-      color: #ff4d6d;
-      margin-bottom: 10px;
-      font-size: 2.5rem;
-      margin-top: 0;
-      animation: heartBeat 0.6s ease-in-out;
-    }
-
-    @keyframes heartBeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      25% {
-        transform: scale(1.1);
-      }
-      50% {
-        transform: scale(1);
-      }
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #555;
-      margin: 15px 0;
-    }
-
-    button {
-      padding: 14px 35px;
-      border: none;
-      border-radius: 50px;
-      background: linear-gradient(135deg, #ff4d6d 0%, #ff1744 100%);
-      color: white;
-      margin-top: 20px;
-      font-size: 16px;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.3s ease;
-    }
-
-    button:hover::before {
-      left: 100%;
-    }
-
-    button:hover {
-      background: linear-gradient(135deg, #e6003c 0%, #cc0033 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(230, 0, 60, 0.4);
-    }
-
-    button:active {
-      transform: translateY(-1px);
-    }
-
-    button:focus {
-      outline: 2px solid #ff4d6d;
-      outline-offset: 2px;
-    }
-
-    button:focus:not(:focus-visible) {
-      outline: none;
-    }
-
-    button:focus-visible {
-      outline: 2px solid #ff4d6d;
-      outline-offset: 2px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    #msg {
-      margin-top: 30px;
-      font-size: 22px;
-      color: #ff4d6d;
-      font-weight: 600;
-      animation: slideInMessage 0.5s ease-out;
-      line-height: 1.8;
-    }
-
-    @keyframes slideInMessage {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-      .section {
-        padding: 40px 15px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 16px;
-      }
-
-      button {
-        padding: 12px 30px;
-        font-size: 15px;
-      }
-
-      #msg {
-        font-size: 18px;
-      }
-    }
-
-    /* Accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        nav { margin: 20px; }
+        nav a { margin: 0 10px; text-decoration: none; color: #007BFF; }
+        .page { display: none; }
+        .active { display: block; }
+        svg { width: 100px; height: 100px; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    </style>
 </head>
-
 <body>
-
-  <main>
-    <div class="section">
-      <h1>Hey Chaku… 🥺</h1>
-      <p>I know I hurt you… I'm really sorry.</p>
+    <nav>
+        <a href="#" onclick="showPage(1)">Page 1: Apology</a>
+        <a href="#" onclick="showPage(2)">Page 2: Our Memories</a>
+        <a href="#" onclick="showPage(3)">Page 3: Promise</a>
+    </nav>
+    <div id="page1" class="page active">
+        <h1>Apology</h1>
+        <p>We sincerely apologize for any inconvenience caused.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="lightblue" />
+        </svg>
     </div>
-
-    <div class="section">
-      <p>
-        I was overwhelmed, hungry, had a bad dream…<br>
-        and I was missing my mom a lot.<br>
-        But still… I shouldn't have hurt you 💔
-      </p>
+    <div id="page2" class="page">
+        <h1>Our Memories</h1>
+        <p>Here are some of our cherished memories together.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <rect x="4" y="4" width="16" height="16" stroke="black" stroke-width="2" fill="lightpink" />
+        </svg>
     </div>
-
-    <div class="section">
-      <p>
-        You are my safe place… not someone I want to fight with.
-      </p>
+    <div id="page3" class="page">
+        <h1>Promise</h1>
+        <p>We promise to learn from our mistakes and make things better.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path d="M12 2L2 22h20L12 2z" stroke="black" stroke-width="2" fill="lightgreen" />
+        </svg>
     </div>
-
-    <div class="section">
-      <h1>Our Moments ❤️</h1>
-      <p>Ahmedabad… Nalsarovar… every moment with you matters to me.</p>
-    </div>
-
-    <div class="section">
-      <h1>Can we fix this? 🥺</h1>
-      <button onclick="showMsg()" aria-label="Reveal message of love">Tap if you still love me ❤️</button>
-      <p id="msg" class="hidden" role="status" aria-live="polite"></p>
-    </div>
-  </main>
-
-  <script>
-    function showMsg() {
-      const msg = document.getElementById("msg");
-      msg.classList.remove("hidden");
-      msg.innerHTML =
-        "I don't want perfect… I just want us again ❤️🥺";
-      msg.focus();
-    }
-
-    // Smooth scroll support for older browsers
-    if (!window.CSS || !window.CSS.supports('scroll-behavior', 'smooth')) {
-      document.documentElement.style.scrollBehavior = 'auto';
-    }
-  </script>
-
+    <script>
+        function showPage(pageNum) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(`page${pageNum}`).classList.add('active');
+        }
+    </script>
 </body>
 </html>

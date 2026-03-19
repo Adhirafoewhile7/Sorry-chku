@@ -1,0 +1,432 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff69b4;
+    --secondary-color: #ffb6d9;
+    --accent-color: #fff0f5;
+    --text-color: #333;
+    --light-text: #666;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== Page Transitions ===== */
+.page {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Container & Layout ===== */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Typography ===== */
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: slideDown 0.6s ease-out;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--light-text);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message em {
+    color: var(--primary-color);
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* ===== Animations ===== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInContent 1s ease-out;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUpCard 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideUpCard {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(-15deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(-15deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-love {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.btn-love:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 20, 147, 0.6);
+}
+
+.btn-love:active {
+    transform: scale(0.98);
+}
+
+/* ===== Memory Cards ===== */
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+    padding: 20px 0;
+}
+
+.memory-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.3);
+    border-color: rgba(255, 105, 180, 0.4);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.memory-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.memory-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.memory-card p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+/* ===== Hidden Message ===== */
+.hidden-message {
+    display: none;
+    margin-top: 40px;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+.message-content {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 182, 217, 0.1));
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 40px 30px;
+    backdrop-filter: blur(10px);
+}
+
+.reveal-animation {
+    animation: revealMessage 0.8s ease-out;
+}
+
+@keyframes revealMessage {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.message-content h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    font-size: 1.05rem;
+    color: var(--light-text);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.signature {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+/* ===== Floating Hearts ===== */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    top: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 80%;
+    top: 20%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    left: 15%;
+    top: 70%;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 85%;
+    top: 80%;
+    animation-delay: 4s;
+}
+
+/* ===== Heart Burst Effect ===== */
+.heart-burst {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    z-index: 1000;
+    animation: burstHeart 1s ease-out forwards;
+}
+
+@keyframes burstHeart {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty))) scale(0.5);
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+
+    .memories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .memory-card {
+        padding: 20px;
+    }
+
+    .memory-icon {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .message {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .heart {
+        font-size: 1.5rem;
+    }
+
+    .message-content {
+        padding: 25px 15px;
+    }
+
+    .message-content h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -3,50 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apology Website</title>
+    <title>Interactive Website</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        nav { margin: 20px; }
-        nav a { margin: 0 10px; text-decoration: none; color: #007BFF; }
-        .page { display: none; }
-        .active { display: block; }
-        svg { width: 100px; height: 100px; animation: bounce 1s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        nav { background: #333; color: #fff; padding: 1rem; }
+        nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+        .content { padding: 20px; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#" onclick="showPage(1)">Page 1: Apology</a>
-        <a href="#" onclick="showPage(2)">Page 2: Our Memories</a>
-        <a href="#" onclick="showPage(3)">Page 3: Promise</a>
+        <a href="#home">Home</a>
+        <a href="#memories">Memories</a>
+        <a href="#finalMessage">Final Message</a>
     </nav>
-    <div id="page1" class="page active">
-        <h1>Apology</h1>
-        <p>We sincerely apologize for any inconvenience caused.</p>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="lightblue" />
-        </svg>
+    <div class="content">
+        <section id="home">
+            <h1>Welcome to Our Interactive Website!</h1>
+            <p>This is the home page where you can find an introduction.</p>
+        </section>
+        <section id="memories">
+            <h1>Our Memories</h1>
+            <p>This page is dedicated to sharing our memories.</p>
+        </section>
+        <section id="finalMessage">
+            <h1>Final Message</h1>
+            <p>Thank you for visiting our website!</p>
+        </section>
     </div>
-    <div id="page2" class="page">
-        <h1>Our Memories</h1>
-        <p>Here are some of our cherished memories together.</p>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <rect x="4" y="4" width="16" height="16" stroke="black" stroke-width="2" fill="lightpink" />
-        </svg>
-    </div>
-    <div id="page3" class="page">
-        <h1>Promise</h1>
-        <p>We promise to learn from our mistakes and make things better.</p>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <path d="M12 2L2 22h20L12 2z" stroke="black" stroke-width="2" fill="lightgreen" />
-        </svg>
-    </div>
-    <script>
-        function showPage(pageNum) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(`page${pageNum}`).classList.add('active');
-        }
-    </script>
 </body>
 </html>

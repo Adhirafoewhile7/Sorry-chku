@@ -3,33 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Website</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        nav { background: #333; color: #fff; padding: 1rem; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; }
-        .content { padding: 20px; }
-    </style>
+    <title>I'm Sorry ❤️ - Our Story</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#memories">Memories</a>
-        <a href="#finalMessage">Final Message</a>
-    </nav>
-    <div class="content">
-        <section id="home">
-            <h1>Welcome to Our Interactive Website!</h1>
-            <p>This is the home page where you can find an introduction.</p>
-        </section>
-        <section id="memories">
-            <h1>Our Memories</h1>
-            <p>This page is dedicated to sharing our memories.</p>
-        </section>
-        <section id="finalMessage">
-            <h1>Final Message</h1>
-            <p>Thank you for visiting our website!</p>
-        </section>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="container">
+            <div class="content fade-in">
+                <h1 class="title">I'm Sorry ❤️</h1>
+                <p class="message">
+                    I know I've made mistakes, and I want you to know how truly sorry I am. 
+                    You mean the world to me, and I can't bear the thought of losing you. 
+                    Let me share our story and remind you why we're worth fighting for.
+                </p>
+                <button class="btn btn-primary" onclick="navigateTo('memories')">
+                    Continue →
+                </button>
+            </div>
+            <div class="floating-hearts">
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+                <span class="heart">❤️</span>
+            </div>
+        </div>
     </div>
+
+    <!-- Memories Page -->
+    <div id="memories" class="page">
+        <div class="container">
+            <h1 class="title">Our Moments ❤️</h1>
+            <p class="subtitle">These are the memories that make me cherish you:</p>
+            
+            <div class="memories-grid">
+                <div class="memory-card slide-up">
+                    <div class="memory-icon">📸</div>
+                    <h3>That First Moment</h3>
+                    <p>When our eyes met, I knew something magical was beginning. Your smile lit up my entire world in an instant.</p>
+                </div>
+                
+                <div class="memory-card slide-up" style="animation-delay: 0.2s;">
+                    <div class="memory-icon">🌙</div>
+                    <h3>Late Night Talks</h3>
+                    <p>Under the stars, we shared our dreams, fears, and secrets. Those conversations became my favorite part of every day.</p>
+                </div>
+                
+                <div class="memory-card slide-up" style="animation-delay: 0.4s;">
+                    <div class="memory-icon">🎵</div>
+                    <h3>Our Song</h3>
+                    <p>Every time that song plays, I'm transported back to dancing with you. Your laughter is the best melody I've ever heard.</p>
+                </div>
+                
+                <div class="memory-card slide-up" style="animation-delay: 0.6s;">
+                    <div class="memory-icon">🌹</div>
+                    <h3>Quiet Moments</h3>
+                    <p>Sitting together without saying a word, just being present with you—those moments are pure bliss and mean everything to me.</p>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="navigateTo('final')">
+                One last thing... →
+            </button>
+        </div>
+    </div>
+
+    <!-- Final Message Page -->
+    <div id="final" class="page">
+        <div class="container">
+            <div class="content fade-in">
+                <h1 class="title">Can we fix this? 🥺</h1>
+                <p class="message">
+                    I know I haven't been perfect, and I've let you down. But what I feel for you is real, 
+                    deep, and unchanging. You are my greatest blessing, and I promise to be better, 
+                    to listen more, to love more intentionally, and to never take you for granted again.
+                </p>
+                <p class="message">
+                    I believe in us. I believe in the beauty of what we have. 
+                    Please give me—give <em>us</em>—another chance.
+                </p>
+
+                <button class="btn btn-love" id="loveBtn" onclick="revealMessage()">
+                    Tap if you still love me ❤️
+                </button>
+
+                <div id="hiddenMessage" class="hidden-message">
+                    <div class="message-content reveal-animation">
+                        <h2>💕 Thank you for listening 💕</h2>
+                        <p>You are my person, my love, my everything. Together, we are stronger than any mistake. 
+                        I love you more than words could ever express, and I'm committed to rebuilding your trust 
+                        and making things right.</p>
+                        <p class="signature">Forever yours ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
